@@ -30,7 +30,7 @@ public class VblogController {
     @RequestMapping("index")
     public ModelAndView pageList() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("client/index");
+        modelAndView.setViewName("index");
         return modelAndView;
     }
 
