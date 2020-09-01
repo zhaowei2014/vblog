@@ -24,13 +24,17 @@ public class VblogController {
     @RequestMapping("pageList")
     public Object pageList(@RequestParam(defaultValue = "0") Integer page,
                            @RequestParam(defaultValue = "2") Integer size) {
-        return service.pageList(page, size);
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("pageList", service.pageList(page, size));
+        modelAndView.setViewName("client/index");
+        return modelAndView;
     }
 
     @RequestMapping("index")
     public ModelAndView pageList() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("index");
+        modelAndView.addObject("pageList", service.pageList(0, 2));
+        modelAndView.setViewName("client/index");
         return modelAndView;
     }
 
