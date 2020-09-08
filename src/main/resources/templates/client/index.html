@@ -27,8 +27,7 @@
             <a class="allpage"><b th:text="'共 '+ ${pageList.getTotalPages()}+ ' 页'"></b></a>
             <a th:if="!${pageList.isFirst()}" th:href="@{/pageList(${pageList.first})}">首页</a>
             <a th:if="${pageList.hasPrevious()}" th:href="@{/pageList(page=${pageList.getNumber() - 1})}">上一页</a>
-            <!--<a th:href="@{'/pageList?currentPage=' + ${i}}" th:each="i :${#numbers.sequence(0, pageList.getTotalPages() - 1)}"-->
-            <!--th:text="${i}" th:class="${pageList.getNumber() == i}? 'page-item active' : 'page-item'"></a>-->
+            <b th:text="'第' + ${pageList.getNumber() + 1} + '页'"></b>
             <a th:if="${pageList.hasNext()}" th:href="@{/pageList(page=${pageList.getNumber() + 1})}">下一页</a>
             <a th:if="${pageList.hasNext()}" th:href="@{/pageList(page=${pageList.getTotalPages() - 1})}">尾页</a>
         </div>
@@ -38,7 +37,7 @@
     <div class="am-u-md-4 am-u-sm-12 blog-sidebar">
         <div class="blog-sidebar-widget blog-bor">
             <h2 class="blog-text-center blog-title"><span>闫欢</span></h2>
-            <!--<img th:src="@{/assets/img/me.jpg}" alt="about me" class="blog-entry-img"/>-->
+            <img th:src="@{/assets/img/me.jpg}" alt="about me" class="blog-entry-img"/>
             <p>
                 Java后台开发
             </p>

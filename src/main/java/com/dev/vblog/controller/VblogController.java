@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 /**
  * TODO:DOCUMENT ME!
  *
- * @author zw
+ * @author yh
  * @date 2020/8/31
  */
 @RestController
@@ -26,14 +26,6 @@ public class VblogController {
                            @RequestParam(defaultValue = "2") Integer size) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("pageList", service.pageList(page, size));
-        modelAndView.setViewName("client/index");
-        return modelAndView;
-    }
-
-    @RequestMapping("index")
-    public ModelAndView pageList() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("pageList", service.pageList(0, 2));
         modelAndView.setViewName("client/index");
         return modelAndView;
     }

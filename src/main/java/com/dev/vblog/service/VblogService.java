@@ -29,6 +29,4 @@ public class VblogService {
         Pageable pageable = PageRequest.of(page, size);
         return repository.findAll(pageable);
     }
-
-
 }
